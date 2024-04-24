@@ -1,0 +1,16 @@
+[
+    {
+        "database_name": "sekolah_beta",
+        "db_host": "127.0.0.1",
+        "db_port": "3306",
+        "db_username": "root",
+        "db_password": "yogi123"
+    },
+    {
+        "database_name": "db_ar_inv",
+        "db_host": "127.0.0.1",
+        "db_port": "3306",
+        "db_username": "root",
+        "db_password": "yogi123"
+    }
+]
