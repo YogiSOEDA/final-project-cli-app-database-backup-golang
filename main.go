@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"sekolahbeta/hacker/cli-app-database-backup/controllers"
+	"sekolahbeta/hacker/cli-app-database-backup/controllers/backup"
+	// "sekolahbeta/hacker/cli-app-database-backup/controllers"
 
 	"github.com/joho/godotenv"
 )
@@ -17,5 +18,8 @@ func Init() {
 func main() {
 	Init()
 
-	controllers.BackupDB()
+	backup.AyokBackup()
+	// controllers.BackupDB()
+	// defer fmt.Println("Alo")
+	// defer fmt.Println("asep")
 }

@@ -24,7 +24,7 @@ import (
 // 	dbFileName string
 // }
 
-func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan<- dbFile, wg *sync.WaitGroup) {
+func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan dbFile, wg *sync.WaitGroup) {
 // func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan<- dbFile, errChan chan<- error, wg *sync.WaitGroup) {
 	// var resultErr error
 
@@ -60,11 +60,11 @@ func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan<- dbFile, wg *sync.Wait
 	// 	errChan <- resultErr
 	// }
 
-	close(chOut)
+	// close(chOut)
 	// close(errChan)
 }
 
-func zipFileSQL(chIn <-chan dbFile, chOut chan<- dbFile, wg *sync.WaitGroup) {
+func zipFileSQL(chIn <-chan dbFile, chOut chan dbFile, wg *sync.WaitGroup) {
 // func zipFileSQL(chIn <-chan dbFile, chOut chan<- dbFile, errChan chan<- error, wg *sync.WaitGroup) {
 	// var resultErr error
 
@@ -109,7 +109,7 @@ func zipFileSQL(chIn <-chan dbFile, chOut chan<- dbFile, wg *sync.WaitGroup) {
 	// 	errChan <- resultErr
 	// }
 
-	close(chOut)
+	// close(chOut)
 	// close(errChan)
 }
 
@@ -218,10 +218,10 @@ func BackupDB() {
 		ch <- db
 	}
 	// }()
-	wg.Wait()
 	close(ch)
-	// close(chSql)
-	// close(chZip)
+	wg.Wait()
+	close(chSql)
+	close(chZip)
 	// close(errors)
 	// for err := range errors {
 	// 	logrus.Println(err)

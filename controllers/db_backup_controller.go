@@ -60,12 +60,12 @@ func dumpDatabase(listDB <-chan model.DatabaseBackup) <-chan dbFile {
 
 	// fileChan := make(chan string)
 
-	newUUID := uuid.New()
+	newUUID := uuid.New().String()
 	now := time.Now()
 
 	go func() {
 		for db := range listDB {
-			fileName := fmt.Sprintf("msql-%s-%s-%s.sql", now.Format("2006-01-02-15-04-05"), db.DatabaseName, newUUID.String())
+			fileName := fmt.Sprintf("msql-%s-%s-%s.sql", now.Format("2006-01-02-15-04-05"), db.DatabaseName, newUUID)
 			file, err := os.Create(fmt.Sprintf("resources/sql/%s", fileName))
 			if err != nil {
 				// logrus.Panic()
