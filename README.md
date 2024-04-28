@@ -12,12 +12,26 @@ This final project is the culmination of the Beta intensive program.
 
 ### db_backup.json file example
 
-     ```json
-        {
-        "database_name": "haha_db",
-        "db_host": "localhost",
-        "db_port": "3306",
-        "db_username": "root",
-        "db_password": "password123(password may not empty)"
-        }
+```json
+     {
+         "data": [
+             {
+                 "database_name": "db_2",
+                 "latest_backup": {
+                     "file_name": "hahaahahs.zip",
+                     "id": 2,
+                     "timestamp": "2024-04-06T14:10:53.94+08:00"
+                 }
+             },
+             {
+                 "database_name": "db_5",
+                 "latest_backup": {
+                     "file_name": "mysql-2023-10-29-00-00-00-cv_kucing_oren-8634bf3f-23b5-45a7-8b78-fe9b1a3bcf66.sql.zip",
+                     "id": 12,
+                     "timestamp": "2024-04-08T06:05:20.031+08:00"
+                 }
+             }
+         ],
+         "message": "Success"
+     }
      ```
