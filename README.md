@@ -13,7 +13,6 @@ This final project is the culmination of the Beta intensive program.
 ### db_backup.json file example
 
      ```json
-     [
         {
         "database_name": "haha_db",
         "db_host": "localhost",
@@ -21,5 +20,4 @@ This final project is the culmination of the Beta intensive program.
         "db_username": "root",
         "db_password": "password123(password may not empty)"
         }
-     ]
      ```
