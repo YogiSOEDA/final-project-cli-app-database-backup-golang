@@ -15,15 +15,6 @@ func CleanUpFile(ch <-chan model.DatabaseBackup) <-chan model.DatabaseBackup {
 	go func() {
 		for db := range ch {
 
-			// err := os.Remove(fmt.Sprintf("resources/sql/%s", db.DBFileSQL))
-			// if err != nil {
-			// 	logrus.Println(err)
-			// }
-
-			// err = os.Remove(fmt.Sprintf("resources/archive/%s", db.DBFileZip))
-			// if err != nil {
-			// 	logrus.Println(err)
-			// }
 			removeFileSQL(db.DBFileSQL)
 
 			removeFileZip(db.DBFileZip)

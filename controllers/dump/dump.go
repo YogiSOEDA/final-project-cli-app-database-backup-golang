@@ -33,7 +33,7 @@ func DumpDatabase(ch <-chan model.DatabaseBackup) <-chan model.DatabaseBackup {
 			if err != nil {
 				logrus.Println(err)
 			}
-			
+
 			file.Close()
 
 			out <- db

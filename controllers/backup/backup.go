@@ -35,26 +35,19 @@ func AyokBackup() {
 
 	upload := upload.AyokUpload(zip, 5)
 
-	// cleanup.AyokClean(upload,1)
 	clean := cleanup.AyokClean(upload, 1)
 
-	// go func() {
 	for v := range clean {
 		fmt.Println(v)
 	}
-	// }()
-
-	// fmt.Println(dump)
 }
 
 func dumpAja(list []model.DatabaseBackup) <-chan model.DatabaseBackup {
-	// var chans []<-chan model.DatabaseBackup
 	ch := make(chan model.DatabaseBackup)
 
 	go func() {
 		for _, source := range list {
 			ch <- source
-			// chans = append(chans, AyokBackup(,3))
 		}
 
 		close(ch)

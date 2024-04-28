@@ -13,7 +13,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func UploadDatabase(ch <-chan model.DatabaseBackup) <-chan model.DatabaseBackup{
+func UploadDatabase(ch <-chan model.DatabaseBackup) <-chan model.DatabaseBackup {
 	out := make(chan model.DatabaseBackup)
 
 	go func() {
