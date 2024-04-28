@@ -10,7 +10,7 @@ This final project is the culmination of the Beta intensive program.
 4. Run `go run main.go` to execute the program
 
 
-1. **db_backup.json**
+### db_backup.json file example
      ```json
      [
         {
