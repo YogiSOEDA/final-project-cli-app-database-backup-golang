@@ -25,7 +25,7 @@ import (
 // }
 
 func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan dbFile, wg *sync.WaitGroup) {
-// func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan<- dbFile, errChan chan<- error, wg *sync.WaitGroup) {
+	// func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan<- dbFile, errChan chan<- error, wg *sync.WaitGroup) {
 	// var resultErr error
 
 	newUUID := uuid.New()
@@ -65,7 +65,7 @@ func dumpDB(chIn <-chan model.DatabaseBackup, chOut chan dbFile, wg *sync.WaitGr
 }
 
 func zipFileSQL(chIn <-chan dbFile, chOut chan dbFile, wg *sync.WaitGroup) {
-// func zipFileSQL(chIn <-chan dbFile, chOut chan<- dbFile, errChan chan<- error, wg *sync.WaitGroup) {
+	// func zipFileSQL(chIn <-chan dbFile, chOut chan<- dbFile, errChan chan<- error, wg *sync.WaitGroup) {
 	// var resultErr error
 
 	defer wg.Done()
@@ -114,7 +114,7 @@ func zipFileSQL(chIn <-chan dbFile, chOut chan dbFile, wg *sync.WaitGroup) {
 }
 
 func uploadZip(chIn <-chan dbFile, wg *sync.WaitGroup) {
-// func uploadZip(chIn <-chan dbFile, errChan chan<- error, wg *sync.WaitGroup) {
+	// func uploadZip(chIn <-chan dbFile, errChan chan<- error, wg *sync.WaitGroup) {
 	// var resultErr error
 
 	defer wg.Done()

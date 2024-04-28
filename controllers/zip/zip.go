@@ -29,7 +29,7 @@ func ZipDatabase(ch <-chan model.DatabaseBackup) <-chan model.DatabaseBackup {
 				logrus.Println(err)
 			}
 
-			w1, err := zipWriter.Create(db.DBFileZip)
+			w1, err := zipWriter.Create(db.DBFileSQL)
 			if err != nil {
 				logrus.Println(err)
 			}
@@ -51,7 +51,7 @@ func ZipDatabase(ch <-chan model.DatabaseBackup) <-chan model.DatabaseBackup {
 	return out
 }
 
-func AyoZip(ch <- chan model.DatabaseBackup, worker int) <-chan model.DatabaseBackup {
+func AyoZip(ch <-chan model.DatabaseBackup, worker int) <-chan model.DatabaseBackup {
 	out := make(chan model.DatabaseBackup)
 	var chIns []<-chan model.DatabaseBackup
 

@@ -26,19 +26,22 @@ func AyokBackup() {
 		logrus.Printf("Gagal encoded json, error : %s", err.Error())
 	}
 
-	dump := dump.AyokDump(dumpAja(listDB),3)
+	_ = os.Mkdir("resources/sql", 0777)
+	_ = os.Mkdir("resources/archive", 0777)
 
-	zip := zip.AyoZip(dump,3)
+	dump := dump.AyokDump(dumpAja(listDB), 3)
 
-	upload := upload.AyokUpload(zip,5)
+	zip := zip.AyoZip(dump, 3)
+
+	upload := upload.AyokUpload(zip, 5)
 
 	// cleanup.AyokClean(upload,1)
-	clean := cleanup.AyokClean(upload,1)
+	clean := cleanup.AyokClean(upload, 1)
 
 	// go func() {
-		for v := range clean {
-			fmt.Println(v)
-		}
+	for v := range clean {
+		fmt.Println(v)
+	}
 	// }()
 
 	// fmt.Println(dump)
@@ -53,8 +56,8 @@ func dumpAja(list []model.DatabaseBackup) <-chan model.DatabaseBackup {
 			ch <- source
 			// chans = append(chans, AyokBackup(,3))
 		}
-	
-		close(ch)		
+
+		close(ch)
 	}()
 
 	return ch

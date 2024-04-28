@@ -26,3 +26,5 @@ resources/sql/msql-2024-04-23-00-35-13-db_ar_inv-614e6d6e-196e-463a-9647-b0cc638
 resources/sql/msql-2024-04-23-00-35-13-sekolah_beta-420fecdc-cb47-4677-8fe6-974352621f7c.sql
 resources/sql/msql-2024-04-23-00-40-14-db_ar_inv-67bc1380-005f-44c4-8b9f-8c3627ffca4e.sql
 resources/sql/msql-2024-04-23-00-40-14-sekolah_beta-95f3d454-16c7-44c2-b987-047849e894b6.sql
+resources/json/db_backup.json
+.env
